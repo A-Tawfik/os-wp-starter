@@ -1,7 +1,7 @@
 <?php
 
 /**
- * CGU functions and definitions
+ * Functions and definitions
  */
 
 // Useful global constants
@@ -32,8 +32,8 @@ include( OS_WP_INC . 'libraries/cmb2-attached-posts/cmb2-attached-posts-field.ph
 include( OS_WP_INC . 'libraries/cmb2-post-search-field/cmb2_post_search_field.php' );
 
 // Run the setup functions
-CGU\Core\setup();
-CGU\Comments\setup();
-CGU\Shortcodes\setup();
-CGU\PostTypes\setup();
-CGU\Taxonomies\setup();
+OS_WP\Core\setup();
+OS_WP\Comments\setup();
+OS_WP\Shortcodes\setup();
+OS_WP\PostTypes\setup();
+OS_WP\Taxonomies\setup();

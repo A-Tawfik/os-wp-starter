@@ -1,5 +1,5 @@
 <?php
-namespace CGU\MetaBoxes\General;
+namespace OS_WP\MetaBoxes\General;
 
 /**
  * Metaboxes that appear on more than one post type around the site

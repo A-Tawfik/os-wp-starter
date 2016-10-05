@@ -1,5 +1,5 @@
 <?php
-namespace CGU\Taxonomies;
+namespace OS_WP\Taxonomies;
 
 /**
  * Set up taxonomies.

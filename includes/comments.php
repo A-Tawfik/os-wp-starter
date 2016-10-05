@@ -1,5 +1,5 @@
 <?php
-namespace CGU\Comments;
+namespace OS_WP\Comments;
 
 /**
  * Set up comments (mainly removing them)

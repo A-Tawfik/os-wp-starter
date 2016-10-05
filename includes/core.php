@@ -1,5 +1,5 @@
 <?php
-namespace CGU\Core;
+namespace OS_WP\Core;
 
 /**
  * Set up theme defaults and register supported WordPress features.

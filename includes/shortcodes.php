@@ -1,5 +1,5 @@
 <?php
-namespace CGU\Shortcodes;
+namespace OS_WP\Shortcodes;
 
 /**
  * Set up shortcodes
