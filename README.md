@@ -3,6 +3,7 @@
 
 ### BEM
 We follow the the principles of BEM ( Block-Element-Modifier ) in our front-end development. BEM is advantageous for a number of reasons:
+
 1. It increases transparency between HTML, CSS, and Javascript.
 2. It makes it easier for new developers to quickly get onboard with a project and understand what’s going on under the hood.
 3. It keeps things maintainable and modular, even when sites get big.
@@ -11,7 +12,9 @@ If you’re unfamiliar with BEM, go to http://getbem.com/introduction/ for a run
 
 Here’s a brief example of how we implement BEM to build a simple navigation:
 
-**HTML :** `menu` is considered the *Block*, `menu__item` is the *Element*, and `menu__item--active` is an example of a *modifier*. The `js-menu-toggle` class is used purely for targeting the element with javascript.
+**HTML :**
+
+`menu` is considered the *Block*, `menu__item` is the *Element*, and `menu__item--active` is an example of a *modifier*. The `js-menu-toggle` class is used purely for targeting the element with javascript.
 ```html
 <nav class="menu">
     <a href="/about" class="menu__item">About</a>
@@ -21,8 +24,9 @@ Here’s a brief example of how we implement BEM to build a simple navigation:
 </nav>
 ```
 
-**CSS :** structure remains as flat as possible. By looking at this CSS you immediately know how the elements are structured in the markup. `.menu` is a block in which `.menu__item` elements are children and `.menu__item--active` is a modifier class used on `.menu__item` elements to turn their color red.
+**CSS :**
 
+Structure remains as flat as possible. By looking at this CSS you immediately know how the elements are structured in the markup. `.menu` is a block in which `.menu__item` elements are children and `.menu__item--active` is a modifier class used on `.menu__item` elements to turn their color red.
 ```scss
 .menu {
     width: 100%;
@@ -42,8 +46,9 @@ Here’s a brief example of how we implement BEM to build a simple navigation:
 }
 ```
 
-**JavaScript :** Unique 'js-' prefixed classes should always be used for targeting elements in javascript. These class names should be independent of ones used for any styling purposes. This keeps styling classes from getting muddled with javascript and makes it easy to look at the html and see what elements javascript is working with.
+**JavaScript :**
 
+Unique 'js-' prefixed classes should always be used for targeting elements in javascript. These class names should be independent of ones used for any styling purposes. This keeps styling classes from getting muddled with javascript and makes it easy to look at the html and see what elements javascript is working with.
 ```js
 $('.js-menu-toggle').click(function(e){
     e.preventDefault();
