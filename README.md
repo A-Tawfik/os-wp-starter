@@ -1,5 +1,10 @@
 # Development Guidelines
 
+### Getting Started
+
+1. Clone or download the repo to your machine.
+2. Using the console, navigate to the project folder and run `npm install`.
+3. You're all set! Optionally you can do a find a replace for any variables or namespaces if want to change the theme name.
 
 ### BEM
 We follow the the principles of BEM ( Block-Element-Modifier ) in our front-end development. BEM is advantageous for a number of reasons:
