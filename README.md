@@ -56,6 +56,44 @@ $('.js-menu-toggle').click(function(e){
 ### CSS
 SCSS should be used to build stylesheets.
 
+#### Directory structure
+SCSS files should be organized in the following way:
+- **/css**
+  - **/sass**
+    - **/shared:** for variables, mixins, vendor stylesheets etc.
+      - **/bourbon**
+      - **/neat**
+      - *_variables.scss*
+      - *_mixins.scss*
+    - **/base:** for the basic stuff.
+      - *_normalize.scss*
+      - *_document.scss*
+      - *_typography.scss*
+      - *_utility.scss*
+      - ...
+    - **/blocks:** each block gets its own file.
+      - *_buttons.scss*
+      - *_menu.scss*
+      - *_carousel.scss*
+      - ...
+    - **/views:** styles for unique views, like the home page for instance.
+      - *_home-page.scss*
+      - *_about-page.scss*
+      - ...
+    - *style.scss*
+  - *style.css*
+  - *style.min.css*
+
+#### Vendors: Bourbon and Neat
+[Bourbon](http://bourbon.io) is a mixin library that helps you quickly write sass and not have to worry about vendor prefixes, among other things.
+[Neat](http://neat.bourbon.io) is a mixin library for implementing a grid system.
+
+#### Variables
+Variables are located in the **/assets/css/sass/shared** directory. Two important variables to take note of are `$max-width` and `$grid-columns`. These are used by Neat's grid column functions and mixins. You can adjust them according to your design and Neat's mixins will adjust accordingly.
+
+#### Mixins
+Mixins are located in the **/assets/css/sass/shared** directory. Currently, the only mixin that comes out of the box is for writing media queries. Feel free to add more.
+
 #### State classes
 In addition to modifier classes, state classes should be used to suggest, as the name implies, an element's *state*. State classes are always prefixed with `is-` or `has-`.
 
@@ -87,35 +125,8 @@ Utility classes are helpful, single (or limited) purpose, classes usually create
 </article>
 ```
 
-#### Flexible Units !IMPORTANT!
+#### Flexible Units
 Whenever size is being determined for something (font-size, width, height, margins, etc), `rem` and `em` units should almost always be used. This definitely goes for typography and in most cases can be applied to other elements. Using `rem` and `em` allows the site to be easily scaled by simple adjusting the font size of the root element (`<html>`) or the element from which a size is being inherited.
-
-#### Directory structure
-SCSS files should be organized in the following way:
-- **/css**
-  - **/sass**
-    - **/shared:** for variables, mixins, vendor stylesheets etc.
-      - *_variables.scss*
-      - *_mixins.scss*
-      - *_normalize.scss*
-      - *_utility.scss*
-    - **/base:** for the basic stuff.
-      - *_document.scss*
-      - *_typography.scss*
-      - *_links.scss*
-      - ...
-    - **/blocks:** each block gets its own file.
-      - *_buttons.scss*
-      - *_menu.scss*
-      - *_carousel.scss*
-      - ...
-    - **/views:** styles for unique views, like the home page for instance.
-      - *_home-page.scss*
-      - *_about-page.scss*
-      - ...
-    - *style.scss*
-  - *style.css*
-  - *style.min.css*
 
 ---
 
@@ -174,6 +185,7 @@ We use the [extended-taxos library](https://github.com/johnbillion/extended-taxo
 
 ### Custom fields
 We use the [CMB2 library](https://github.com/WebDevStudios/CMB2) to create and manage custom fields in the backend.
+Refer to the [CMB2 wiki](https://github.com/WebDevStudios/CMB2/wiki) for documentation.
 
 ### Functions and Includes
 In addition to the functions.php file, the theme should have an `includes` folder which holds all necessary backend functions. It should look something like this:
