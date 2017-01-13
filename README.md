@@ -184,6 +184,12 @@ NOTE: Please DO NOT use Bootstrap or any other framework which comes with a styl
 ### Icons and Fonts
 [Icomoon.io](http://icomoon.io) should be used to create icon fonts for the UI of the site. This includes things like arrows, social media icons, search icons, etc. Icomoon will let you export .ttf, .woff, and .svg versions of your icon fonts. Icon fonts as well as regular fonts for the site as a whole, if self-hosted, should be stored in a **/fonts** directory inside the theme.
 
+Icon markup should use `<span>` tags with the appropriate attributes. **Important**: Use `aria-hidden` to hide from screen readers.
+
+```html
+<a href="/"><span class="icon icon-arrow-left" aria-hidden="true"></span> Back to the home page</a>
+```
+
 ---
 
 # Wordpress Guidelines
