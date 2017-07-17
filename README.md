@@ -17,41 +17,7 @@ We follow the the principles of BEM ( Block-Element-Modifier ) in our front-end 
 
 If you’re unfamiliar with BEM, go to http://getbem.com/introduction/ for a rundown on using it.
 
-Here’s a brief example of how we implement BEM to build a simple navigation:
-
-**HTML :**
-
-`menu` is considered the *Block*, `menu__item` is the *Element*, and `menu__item--active` is an example of a *modifier*. The `js-menu-toggle` class is used purely for targeting the element with javascript.
-```html
-<nav class="menu">
-    <a href="/about" class="menu__item">About</a>
-    <a href="/products" class="menu__item menu__item--active">Products</a>
-    <a href="/contact" class="menu__item">Contact</a>
-    <a href="#" class="menu__toggle js-menu-toggle">Menu Toggle</a>
-</nav>
-```
-
-**CSS :**
-
-Structure remains as flat as possible. By looking at this CSS you immediately know how the elements are structured in the markup. `.menu` is a block in which `.menu__item` elements are children and `.menu__item--active` is a modifier class used on `.menu__item` elements to turn their color red.
-```scss
-.menu {
-    width: 100%;
-}
-.menu__item {
-    display: none;
-    color: blue;
-    .menu--open & {
-        display: block;
-    }
-}
-.menu__item--active {
-    color: red;
-}
-.menu__toggle {
-    display: block;
-}
-```
+---
 
 **JavaScript :**
 
@@ -66,45 +32,13 @@ $('.js-menu-toggle').click(function(e){
 ---
 
 ### CSS
-SCSS should be used to build stylesheets.
-
-#### Directory structure
-SCSS files should be organized in the following way:
-- **/css**
-  - **/sass**
-    - **/shared:** for variables, mixins, vendor stylesheets etc.
-      - **/bourbon**
-      - **/neat**
-      - *_variables.scss*
-      - *_mixins.scss*
-    - **/base:** for the basic stuff.
-      - *_normalize.scss*
-      - *_document.scss*
-      - *_typography.scss*
-      - *_utility.scss*
-      - ...
-    - **/blocks:** each block gets its own file.
-      - *_buttons.scss*
-      - *_menu.scss*
-      - *_carousel.scss*
-      - ...
-    - **/views:** styles for unique views, like the home page for instance.
-      - *_home-page.scss*
-      - *_about-page.scss*
-      - ...
-    - *style.scss*
-  - *style.css*
-  - *style.min.css*
-
-#### Vendors: Bourbon and Neat
-[Bourbon](http://bourbon.io) is a mixin library that helps you quickly write sass and not have to worry about vendor prefixes, among other things.
-[Neat](http://neat.bourbon.io) is a mixin library for implementing a grid system.
+SCSS is used to build stylesheets.
 
 #### Variables
-Variables are located in the **/assets/css/sass/shared** directory. Two important variables to take note of are `$max-width` and `$grid-columns`. These are used by Neat's grid column functions and mixins. You can adjust them according to your design and Neat's mixins will adjust accordingly.
+Variables are located in the **/assets/css/sass/settings** directory.
 
 #### Mixins
-Mixins are located in the **/assets/css/sass/shared** directory. Currently, the only mixin that comes out of the box is for writing media queries. Feel free to add more.
+Mixins are located in the **/assets/css/sass/tools** directory. Currently, the only mixin that comes out of the box is for writing media queries. Feel free to add more.
 
 #### State classes
 In addition to modifier classes, state classes should be used to suggest, as the name implies, an element's *state*. State classes are always prefixed with `is-` or `has-`.

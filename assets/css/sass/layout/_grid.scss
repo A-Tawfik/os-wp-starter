@@ -1,5 +1,5 @@
 /*
- * CCL Grid System
+ * Grid System
  * ---------------
  */
 
@@ -7,19 +7,19 @@
 // Container
 // ---------------------------------- //
 .os-l-container {
-    @include ccl-l-container;
+    @include os-l-container;
 }
 
 // Row
 // ---------------------------------- //
 .os-l-row {
-    @include ccl-l-row;
+    @include os-l-row;
 }
 
 // Column
 // ---------------------------------- //
 .os-l-column {
-    @include ccl-l-column;
+    @include os-l-column;
 }
 
 
@@ -27,7 +27,7 @@
 // Grid Fractional Spans
 // ---------------------------------- //
 
-[class*="ccl-l-span-"] {
+[class*="os-l-span-"] {
     flex-grow: 0;
     flex-basis: 100%;
 }
@@ -110,7 +110,7 @@
 @for $i from 1 through $columns {
 
     .os-l-span-#{$i} {
-        flex-basis: ccl-span( $i );
+        flex-basis: os-span( $i );
     }
 
 }
@@ -119,7 +119,7 @@
 
     @include media($sm) {
         .os-l-span-#{$i}-sm {
-            flex-basis: ccl-span( $i );
+            flex-basis: os-span( $i );
         }
     }
 
@@ -129,7 +129,7 @@
 
     @include media($md) {
         .os-l-span-#{$i}-md {
-            flex-basis: ccl-span( $i );
+            flex-basis: os-span( $i );
         }
     }
 
@@ -139,7 +139,7 @@
 
     @include media($lg) {
         .os-l-span-#{$i}-lg {
-            flex-basis: ccl-span( $i );
+            flex-basis: os-span( $i );
         }
     }
 
@@ -149,7 +149,7 @@
 
     @include media($xl) {
         .os-l-span-#{$i}-xl {
-            flex-basis: ccl-span( $i );
+            flex-basis: os-span( $i );
         }
     }
 
