@@ -25,7 +25,7 @@ get_header(); ?>
 
 		<hr>
 
-		<?php get_template_part( 'content', 'base' ); ?>
+		<?php get_template_part( 'content', 'blocks' ); ?>
 
 	</div>
 
