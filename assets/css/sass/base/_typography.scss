@@ -28,7 +28,7 @@ textarea {
  h1, .os-h1 {
 	margin-top: $leading;
 	margin-bottom: 0;
-	font-family: $gotham-narrow-light;
+	font-family: $font-main;
 	font-weight: 300;
 	font-size: rem(34);
 	line-height: 1.1em;
@@ -43,7 +43,7 @@ textarea {
 	font-size: rem(24);
 	line-height: 1.25em;
 	font-weight: 500;
-	font-family: $gotham-narrow-medium;
+	font-family: $font-main;
 	@include media($lg) {
 		font-size: rem(36);
 		line-height: 1.1em;
@@ -55,7 +55,7 @@ textarea {
 	font-size: rem(20);
 	line-height: 1.25em;
 	font-weight: 500;
-	font-family: $gotham-narrow-medium;
+	font-family: $font-main;
 	@include media($lg) {
 		font-size: rem(24);
 	}
@@ -66,7 +66,7 @@ textarea {
 	font-size: rem(18);
 	line-height: 1.2em;
 	font-weight: 500;
-	font-family: $gotham-narrow-medium;
+	font-family: $font-main;
 	@include media($lg) {
 		font-size: rem(20);
 	}
@@ -74,7 +74,7 @@ textarea {
  h5, .os-h5 {
 	margin-top: $leading;
 	margin-bottom: 0;
-	font-family: $gotham-narrow-medium;
+	font-family: $font-main;
 	font-size: rem(14);
 	line-height: 1.3em;
 	font-weight: 500;
@@ -82,7 +82,7 @@ textarea {
  h6, .os-h6 {
 	margin-top: $leading;
 	margin-bottom: 0;
-	font-family: $gotham-narrow-medium;
+	font-family: $font-main;
 	font-size: rem(12);
 	line-height: 1.4em;
 	font-weight: 500;
@@ -172,7 +172,6 @@ pre {
 	background: #eee;
 	font-family: $font-pre;
 	font-size: rem(14);
-	line-height: $font-line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;

@@ -143,9 +143,12 @@ a.os-u-faded:focus {
 
 // Effects
 // ------------------------------------------ /
-.os-u-transition-300 {
-	transition: all 300ms ease-out;
+.os-u-transition {
+	transition: all 250ms ease-out;
 }
-.os-u-transition-100 {
+.os-u-transition-fast {
 	transition: all 100ms ease-out;
+}
+.os-u-transition-slow {
+	transition: all 500ms ease-out;
 }
