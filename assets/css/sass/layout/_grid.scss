@@ -1,0 +1,215 @@
+/*
+ * CCL Grid System
+ * ---------------
+ */
+
+
+// Container
+// ---------------------------------- //
+.ccl-l-container {
+    @include ccl-l-container;
+}
+
+// Row
+// ---------------------------------- //
+.ccl-l-row {
+    @include ccl-l-row;
+}
+
+// Column
+// ---------------------------------- //
+.ccl-l-column {
+    @include ccl-l-column;
+}
+
+
+
+// Grid Fractional Spans
+// ---------------------------------- //
+
+[class*="ccl-l-span-"] {
+    flex-grow: 0;
+    flex-basis: 100%;
+}
+
+.ccl-l-span-quarter {
+    flex-basis: calc(25% - #{$gutter});
+}
+.ccl-l-span-third {
+    flex-basis: calc(33.333% - #{$gutter});
+}
+.ccl-l-span-half {
+    flex-basis: calc(50% - #{$gutter});
+}
+.ccl-l-span-two-thirds {
+    flex-basis: calc(66.666% - #{$gutter});
+}
+.ccl-l-span-three-quarters {
+    flex-basis: calc(75% - #{$gutter});
+}
+
+@include media($sm) {
+    .ccl-l-span-quarter-sm {
+        flex-basis: calc(25% - #{$gutter});
+    }
+    .ccl-l-span-third-sm {
+        flex-basis: calc(33.333% - #{$gutter});
+    }
+    .ccl-l-span-half-sm {
+        flex-basis: calc(50% - #{$gutter});
+    }
+    .ccl-l-span-two-thirds-sm {
+        flex-basis: calc(66.666% - #{$gutter});
+    }
+    .ccl-l-span-three-quarters-sm {
+        flex-basis: calc(75% - #{$gutter});
+    }
+}
+
+@include media($md) {
+    .ccl-l-span-quarter-md {
+        flex-basis: calc(25% - #{$gutter});
+    }
+    .ccl-l-span-third-md {
+        flex-basis: calc(33.333% - #{$gutter});
+    }
+    .ccl-l-span-half-md {
+        flex-basis: calc(50% - #{$gutter});
+    }
+    .ccl-l-span-two-thirds-md {
+        flex-basis: calc(66.666% - #{$gutter});
+    }
+    .ccl-l-span-three-quarters-md {
+        flex-basis: calc(75% - #{$gutter});
+    }
+}
+
+@include media($lg) {
+    .ccl-l-span-quarter-lg {
+        flex-basis: calc(25% - #{$gutter});
+    }
+    .ccl-l-span-third-lg {
+        flex-basis: calc(33.333% - #{$gutter});
+    }
+    .ccl-l-span-half-lg {
+        flex-basis: calc(50% - #{$gutter});
+    }
+    .ccl-l-span-two-thirds-lg {
+        flex-basis: calc(66.666% - #{$gutter});
+    }
+    .ccl-l-span-three-quarters-lg {
+        flex-basis: calc(75% - #{$gutter});
+    }
+}
+
+
+
+// Grid Column Spans
+// ---------------------------------- //
+
+@for $i from 1 through $columns {
+
+    .ccl-l-span-#{$i} {
+        flex-basis: ccl-span( $i );
+    }
+
+}
+
+@for $i from 1 through $columns {
+
+    @include media($sm) {
+        .ccl-l-span-#{$i}-sm {
+            flex-basis: ccl-span( $i );
+        }
+    }
+
+}
+
+@for $i from 1 through $columns {
+
+    @include media($md) {
+        .ccl-l-span-#{$i}-md {
+            flex-basis: ccl-span( $i );
+        }
+    }
+
+}
+
+@for $i from 1 through $columns {
+
+    @include media($lg) {
+        .ccl-l-span-#{$i}-lg {
+            flex-basis: ccl-span( $i );
+        }
+    }
+
+}
+
+@for $i from 1 through $columns {
+
+    @include media($xl) {
+        .ccl-l-span-#{$i}-xl {
+            flex-basis: ccl-span( $i );
+        }
+    }
+
+}
+
+
+
+// Grid Column Offsets
+// ---------------------------------- //
+@for $i from 1 through $columns {
+    .ccl-l-offset-#{$i} {
+        margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
+    }
+}
+@for $i from 1 through $columns {
+    @include media($sm) {
+        .ccl-l-offset-#{$i}-sm {
+            margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
+        }
+    }
+}
+@for $i from 1 through $columns {
+    @include media($md) {
+        .ccl-l-offset-#{$i}-md {
+            margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
+        }
+    }
+}
+@for $i from 1 through $columns {
+    @include media($lg) {
+        .ccl-l-offset-#{$i}-lg {
+            margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
+        }
+    }
+}
+@for $i from 1 through $columns {
+    @include media($xl) {
+        .ccl-l-offset-#{$i}-xl {
+            margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
+        }
+    }
+}
+
+
+
+
+// Visual Grid Columns
+// ---------------------------------- //
+.ccl-l-visual-grid {
+    position: relative;
+    
+    &:before {
+        content: "";
+        background: repeating-linear-gradient(to right, transparent, transparent $gutter, rgba(18, 109, 181, 0.1) $gutter, rgba(18, 109, 181, 0.1) #{ 1/$columns * 100% });
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -$gutter/2;
+        right: $gutter/2;
+        bottom: 0;
+        z-index: 0;
+    }
+}
