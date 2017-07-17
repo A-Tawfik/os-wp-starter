@@ -49,6 +49,45 @@ body {
     background: $color-background-selection;
 }
 
+
+/* Lists
+ * ---------------------------------------- */
+ul, ol {
+	margin: $leading 0 0;
+    padding: 0 0 0 1rem;
+	ul, ol {
+		margin-top: 0;
+	}
+}
+
+ol ol {
+	list-style: lower-alpha;
+}
+
+ol ol ol {
+	list-style: lower-roman;
+}
+
+
+/* Tables
+ * ---------------------------------------- */
+ table {
+    border-collapse: collapse;
+    background-color: transparent;
+	margin: $leading 0 0;
+}
+caption {
+    @extend .os-u-text-left;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    color: lightgray;
+}
+th {
+    @extend .os-u-text-left;
+}
+
+
+
 /* Media Size indicator
  *
  * Used to display the current media size.

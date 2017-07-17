@@ -14,13 +14,6 @@
             padding-left: $radio-size + ($gutter * 2);
         }
 
-        .os-c-quiz-card & {
-            @extend .os-u-mb-1;
-            @include media($md) {
-                padding-left: $radio-size + ($gutter * 3);
-            }
-        }
-    
         &:before {  
             content: "";
             display: block;
@@ -37,12 +30,6 @@
                 left: $gutter;
             }
             
-            .os-c-quiz-card & {
-                border-color: white;
-                // @include media($md) {
-                //     left: $gutter * 1.5;
-                // }
-            }
         }
         &:after {
             content: "";
@@ -56,9 +43,6 @@
             border-radius: 50%;
             transition: all 100ms ease-out;
             transform: translateY(-50%) scale(0);
-            .os-c-quiz-card & {
-                background: white;
-            }
         }
     }
     .os-b-input--radio:not(:checked) + &:hover:after {
@@ -67,9 +51,6 @@
     .os-b-input--radio:checked + &:after {
         transform: translateY(-50%) scale(1);
         background: black;
-        .os-c-quiz-card & {
-            background: white;
-        }
     }
     
 }
@@ -96,16 +77,6 @@
         color: $blue;
     }
 
-    .os-c-search__bar & {
-        @extend .os-h3;
-        @extend .os-u-mt-0;
-        color: black;
-        border: 0;
-        padding: 0;
-        @include placeholder {
-            color: black;
-        }
-    }
 }
 
 .os-b-input--radio {
