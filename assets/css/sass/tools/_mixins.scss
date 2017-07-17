@@ -61,7 +61,7 @@
 // Grid Container
 // ------------------------------------- //
 @mixin ccl-l-container {
-    @extend .ccl-u-clearfix;
+    @extend .os-u-clearfix;
     margin-left: auto;
     margin-right: auto;
     max-width: $max-width;
@@ -76,7 +76,7 @@
     margin-left: -$gutter/2;
     margin-right: -$gutter/2;
     
-    &.ccl-is-nowrap {
+    &.os-is-nowrap {
         flex-wrap: nowrap;
     }
 }

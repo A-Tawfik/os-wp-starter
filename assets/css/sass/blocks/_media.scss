@@ -12,7 +12,7 @@
 
 /* Responsive Media
  * -----------------------------------------------------------*/
-.ccl-b-media {
+.os-b-media {
 	position: relative;
 	height: 0;
 	overflow: hidden;
@@ -27,22 +27,22 @@
 	}
 }
 
-.ccl-b-media--1x2 {
-	@extend .ccl-b-media;
+.os-b-media--1x2 {
+	@extend .os-b-media;
 	padding-top: 50%;
 }
 
-.ccl-b-media--16x9 {
-	@extend .ccl-b-media;
+.os-b-media--16x9 {
+	@extend .os-b-media;
 	padding-top: 56.25%;
 }
 
-.ccl-b-media--4x3 {
-	@extend .ccl-b-media;
+.os-b-media--4x3 {
+	@extend .os-b-media;
 	padding-top: 75%;
 }
 
-.ccl-b-media--1x1 {
-	@extend .ccl-b-media;
+.os-b-media--1x1 {
+	@extend .os-b-media;
 	padding-top: 100%;
 }

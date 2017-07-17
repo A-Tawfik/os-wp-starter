@@ -6,19 +6,19 @@
 
 // Container
 // ---------------------------------- //
-.ccl-l-container {
+.os-l-container {
     @include ccl-l-container;
 }
 
 // Row
 // ---------------------------------- //
-.ccl-l-row {
+.os-l-row {
     @include ccl-l-row;
 }
 
 // Column
 // ---------------------------------- //
-.ccl-l-column {
+.os-l-column {
     @include ccl-l-column;
 }
 
@@ -32,72 +32,72 @@
     flex-basis: 100%;
 }
 
-.ccl-l-span-quarter {
+.os-l-span-quarter {
     flex-basis: calc(25% - #{$gutter});
 }
-.ccl-l-span-third {
+.os-l-span-third {
     flex-basis: calc(33.333% - #{$gutter});
 }
-.ccl-l-span-half {
+.os-l-span-half {
     flex-basis: calc(50% - #{$gutter});
 }
-.ccl-l-span-two-thirds {
+.os-l-span-two-thirds {
     flex-basis: calc(66.666% - #{$gutter});
 }
-.ccl-l-span-three-quarters {
+.os-l-span-three-quarters {
     flex-basis: calc(75% - #{$gutter});
 }
 
 @include media($sm) {
-    .ccl-l-span-quarter-sm {
+    .os-l-span-quarter-sm {
         flex-basis: calc(25% - #{$gutter});
     }
-    .ccl-l-span-third-sm {
+    .os-l-span-third-sm {
         flex-basis: calc(33.333% - #{$gutter});
     }
-    .ccl-l-span-half-sm {
+    .os-l-span-half-sm {
         flex-basis: calc(50% - #{$gutter});
     }
-    .ccl-l-span-two-thirds-sm {
+    .os-l-span-two-thirds-sm {
         flex-basis: calc(66.666% - #{$gutter});
     }
-    .ccl-l-span-three-quarters-sm {
+    .os-l-span-three-quarters-sm {
         flex-basis: calc(75% - #{$gutter});
     }
 }
 
 @include media($md) {
-    .ccl-l-span-quarter-md {
+    .os-l-span-quarter-md {
         flex-basis: calc(25% - #{$gutter});
     }
-    .ccl-l-span-third-md {
+    .os-l-span-third-md {
         flex-basis: calc(33.333% - #{$gutter});
     }
-    .ccl-l-span-half-md {
+    .os-l-span-half-md {
         flex-basis: calc(50% - #{$gutter});
     }
-    .ccl-l-span-two-thirds-md {
+    .os-l-span-two-thirds-md {
         flex-basis: calc(66.666% - #{$gutter});
     }
-    .ccl-l-span-three-quarters-md {
+    .os-l-span-three-quarters-md {
         flex-basis: calc(75% - #{$gutter});
     }
 }
 
 @include media($lg) {
-    .ccl-l-span-quarter-lg {
+    .os-l-span-quarter-lg {
         flex-basis: calc(25% - #{$gutter});
     }
-    .ccl-l-span-third-lg {
+    .os-l-span-third-lg {
         flex-basis: calc(33.333% - #{$gutter});
     }
-    .ccl-l-span-half-lg {
+    .os-l-span-half-lg {
         flex-basis: calc(50% - #{$gutter});
     }
-    .ccl-l-span-two-thirds-lg {
+    .os-l-span-two-thirds-lg {
         flex-basis: calc(66.666% - #{$gutter});
     }
-    .ccl-l-span-three-quarters-lg {
+    .os-l-span-three-quarters-lg {
         flex-basis: calc(75% - #{$gutter});
     }
 }
@@ -109,7 +109,7 @@
 
 @for $i from 1 through $columns {
 
-    .ccl-l-span-#{$i} {
+    .os-l-span-#{$i} {
         flex-basis: ccl-span( $i );
     }
 
@@ -118,7 +118,7 @@
 @for $i from 1 through $columns {
 
     @include media($sm) {
-        .ccl-l-span-#{$i}-sm {
+        .os-l-span-#{$i}-sm {
             flex-basis: ccl-span( $i );
         }
     }
@@ -128,7 +128,7 @@
 @for $i from 1 through $columns {
 
     @include media($md) {
-        .ccl-l-span-#{$i}-md {
+        .os-l-span-#{$i}-md {
             flex-basis: ccl-span( $i );
         }
     }
@@ -138,7 +138,7 @@
 @for $i from 1 through $columns {
 
     @include media($lg) {
-        .ccl-l-span-#{$i}-lg {
+        .os-l-span-#{$i}-lg {
             flex-basis: ccl-span( $i );
         }
     }
@@ -148,7 +148,7 @@
 @for $i from 1 through $columns {
 
     @include media($xl) {
-        .ccl-l-span-#{$i}-xl {
+        .os-l-span-#{$i}-xl {
             flex-basis: ccl-span( $i );
         }
     }
@@ -160,34 +160,34 @@
 // Grid Column Offsets
 // ---------------------------------- //
 @for $i from 1 through $columns {
-    .ccl-l-offset-#{$i} {
+    .os-l-offset-#{$i} {
         margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
     }
 }
 @for $i from 1 through $columns {
     @include media($sm) {
-        .ccl-l-offset-#{$i}-sm {
+        .os-l-offset-#{$i}-sm {
             margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
         }
     }
 }
 @for $i from 1 through $columns {
     @include media($md) {
-        .ccl-l-offset-#{$i}-md {
+        .os-l-offset-#{$i}-md {
             margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
         }
     }
 }
 @for $i from 1 through $columns {
     @include media($lg) {
-        .ccl-l-offset-#{$i}-lg {
+        .os-l-offset-#{$i}-lg {
             margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
         }
     }
 }
 @for $i from 1 through $columns {
     @include media($xl) {
-        .ccl-l-offset-#{$i}-xl {
+        .os-l-offset-#{$i}-xl {
             margin-left: calc( #{ $i/12 * 100% } + #{ $gutter/2 } );
         }
     }
@@ -198,7 +198,7 @@
 
 // Visual Grid Columns
 // ---------------------------------- //
-.ccl-l-visual-grid {
+.os-l-visual-grid {
     position: relative;
     
     &:before {

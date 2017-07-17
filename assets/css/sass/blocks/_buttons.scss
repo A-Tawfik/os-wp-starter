@@ -1,9 +1,9 @@
 // Standard Button
 // ------------------------------------------ //
 
-.ccl-b-btn {
-    @extend .ccl-h4;
-	@extend .ccl-u-transition-100;
+.os-b-btn {
+    @extend .os-h4;
+	@extend .os-u-transition-100;
     appearance: none;
     background: none;
     border: 1px solid black;
@@ -26,7 +26,7 @@
         box-shadow: $focus-box-shadow-lg;
 	}
 
-    .ccl-c-search__bar &.ccl-c-dropdown__toggle {
+    .os-c-search__bar &.os-c-dropdown__toggle {
         border-color: transparent;
         &:focus {
             border: 1px solid black;
@@ -36,7 +36,7 @@
 
     // Inverse Button
     // ------------------------------------------ //
-    &.ccl-is-inverse {
+    &.os-is-inverse {
         border-color: white;
         color: white;
         &:hover, &:focus {
@@ -51,15 +51,15 @@
 
     // Small Button
     // ------------------------------------------ //
-    &.ccl-is-small {
-        @extend .ccl-h5;
+    &.os-is-small {
+        @extend .os-h5;
         margin-top: 0;
         padding: 0.4em 0.5em;
     }
 
     // Disabled Button
     // ------------------------------------------ //
-    &[disabled], &.ccl-is-disabled {
+    &[disabled], &.os-is-disabled {
         cursor: default;
         opacity: 0.3;
         &:hover, &:focus {
@@ -71,7 +71,7 @@
 
     // Solid Button
     // ------------------------------------------ //
-    &.ccl-is-solid {
+    &.os-is-solid {
         border-color: transparent;
         background: $color-text-main;
         color: white;
@@ -80,7 +80,7 @@
         }
     }
 
-    &.ccl-is-solid.ccl-is-inverse {
+    &.os-is-solid.os-is-inverse {
         background: white;
         color: $color-text-main;
         &:hover, &:focus {
@@ -88,8 +88,8 @@
         }
     }
 
-    &.ccl-is-solid[disabled], 
-    &.ccl-is-solid.ccl-is-disabled {
+    &.os-is-solid[disabled], 
+    &.os-is-solid.os-is-disabled {
         background: rgba(black, 0.35);
         &:hover, &:focus {
             border-color: transparent;
@@ -100,8 +100,8 @@
 
 // Circular Button
 // ------------------------------------------ //
-.ccl-b-btn--circular {
-    @extend .ccl-u-transition-100;
+.os-b-btn--circular {
+    @extend .os-u-transition-100;
     background: rgba(white, 0.5);
     border: 1px solid black;
     border-radius: 50%;
@@ -146,7 +146,7 @@
     }
 
     [disabled],
-	&.ccl-b-btn--disabled,
+	&.os-b-btn--disabled,
 	&.slick-disabled {
         opacity: 0.3;
         color: black;

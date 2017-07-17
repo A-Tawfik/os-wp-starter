@@ -1,8 +1,8 @@
-.ccl-b-label {
-    @extend .ccl-u-transition;
+.os-b-label {
+    @extend .os-u-transition;
     display: block;
 
-    .ccl-b-input--radio + & {
+    .os-b-input--radio + & {
         
         $radio-size: 40px;
 
@@ -14,8 +14,8 @@
             padding-left: $radio-size + ($gutter * 2);
         }
 
-        .ccl-c-quiz-card & {
-            @extend .ccl-u-mb-1;
+        .os-c-quiz-card & {
+            @extend .os-u-mb-1;
             @include media($md) {
                 padding-left: $radio-size + ($gutter * 3);
             }
@@ -37,7 +37,7 @@
                 left: $gutter;
             }
             
-            .ccl-c-quiz-card & {
+            .os-c-quiz-card & {
                 border-color: white;
                 // @include media($md) {
                 //     left: $gutter * 1.5;
@@ -56,26 +56,26 @@
             border-radius: 50%;
             transition: all 100ms ease-out;
             transform: translateY(-50%) scale(0);
-            .ccl-c-quiz-card & {
+            .os-c-quiz-card & {
                 background: white;
             }
         }
     }
-    .ccl-b-input--radio:not(:checked) + &:hover:after {
+    .os-b-input--radio:not(:checked) + &:hover:after {
         transform: translateY(-50%) scale(0.5);
     }
-    .ccl-b-input--radio:checked + &:after {
+    .os-b-input--radio:checked + &:after {
         transform: translateY(-50%) scale(1);
         background: black;
-        .ccl-c-quiz-card & {
+        .os-c-quiz-card & {
             background: white;
         }
     }
     
 }
 
-.ccl-b-input {
-    @extend .ccl-u-transition;
+.os-b-input {
+    @extend .os-u-transition;
     display: block;
     width: 100%;
     color: $color-text-main;
@@ -96,9 +96,9 @@
         color: $blue;
     }
 
-    .ccl-c-search__bar & {
-        @extend .ccl-h3;
-        @extend .ccl-u-mt-0;
+    .os-c-search__bar & {
+        @extend .os-h3;
+        @extend .os-u-mt-0;
         color: black;
         border: 0;
         padding: 0;
@@ -108,6 +108,6 @@
     }
 }
 
-.ccl-b-input--radio {
+.os-b-input--radio {
     display: none;
 }
