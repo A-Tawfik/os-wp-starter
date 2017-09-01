@@ -1,10 +1,10 @@
-# Development Guidelines
-
-### Getting Started
+# Getting Started
 
 1. Clone or download the repo to your machine.
 2. Using the console, navigate to the project folder and run `npm install`.
 3. You're all set! Optionally you can do a find a replace for any variables or namespaces if want to change the theme name.
+
+# Development Guidelines
 
 ---
 
@@ -91,38 +91,17 @@ JS files should be created inside a source folder and then compiled into 1 main 
 ---
 
 ### Compiling
-Grunt or Gulp are both acceptable tools for compiling CSS and JS.
+Gulp is used as the preferred method for tasks. Run `npm install` to get setup with the required modules.
 
----
+**Available Tasks**
 
-### Frameworks
+`gulp scripts` || Compiles javascripts files
 
-The following is a list of frameworks often used in our development. Please strongly consider whether additional libraries are necessary. The slimmer the better.
+`gulp styles` || Compiles .scss files
 
-**CSS**
+`gulp watch` || Watches for changes to JS and SCSS files and recompiles when needed.
 
-- [Bourbon](http://bourbon.io/) - a handy mixin library
-- [Neat](http://neat.bourbon.io/) - a mixin library for creating grid systems.
-
-NOTE: Please DO NOT use Bootstrap or any other framework which comes with a stylesheet of its own. Bourbon and Neat are mixin and function libraries and therefore do not get compiled. Exceptions are vendor stylesheets which may be necessary for some javascript libraries. If possible, please designate them to their own `.scss` file inside the `css/sass/shared/` folder.
-
-**Javascript**
-
-- [jQuery](https://jquery.com/) - self explanatory.
-- [Slick Slides](http://kenwheeler.github.io/slick/) - a flexible JS library for creating carousels.
-- [Modernizr](https://modernizr.com/) - browser feature detection.
-- [Velocity](http://velocityjs.org/) - library for animating with javascript.
-
----
-
-### Icons and Fonts
-[Icomoon.io](http://icomoon.io) should be used to create icon fonts for the UI of the site. This includes things like arrows, social media icons, search icons, etc. Icomoon will let you export .ttf, .woff, and .svg versions of your icon fonts. Icon fonts as well as regular fonts for the site as a whole, if self-hosted, should be stored in a **/fonts** directory inside the theme.
-
-Icon markup should use `<span>` tags with the appropriate attributes. **Important**: Use `aria-hidden` to hide from screen readers.
-
-```html
-<a href="/"><span class="icon icon-arrow-left" aria-hidden="true"></span> Back to the home page</a>
-```
+Livereload is also part the watch task. Install the Livereload extension for Chrome and you can enable live reloading in your browser; the page will update as you save changes. Make sure `gulp watch` is running before enabling Livereload in your browser.
 
 ---
 
