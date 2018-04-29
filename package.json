@@ -1,5 +1,5 @@
 {
-  "name": "os-wp-starter",
+  "name": "wp-react-starter",
   "title": "WP Starter",
   "description": "A starter theme for wordpress",
   "version": "1.0.0",
@@ -13,20 +13,18 @@
     "email": "tech@objectivesubject.com",
     "url": "http://objectivesubject.com"
   },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-add-src": "^0.2.0",
-    "gulp-autoprefixer": "^4.0.0",
-    "gulp-clean-css": "^3.3.0",
-    "gulp-combine-mq": "^0.4.0",
-    "gulp-concat-util": "^0.5.5",
-    "gulp-jshint": "^2.0.4",
-    "gulp-livereload": "^3.8.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.1.1",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^2.1.2",
-    "jshint": "^2.9.4"
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "keywords": []
 }
