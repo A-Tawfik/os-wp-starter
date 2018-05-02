@@ -54,10 +54,18 @@ function features() {
 function scripts( $debug = false ) {
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
+	// wp_enqueue_script(
+	// 	'main',
+	// 	OS_WP_TEMPLATE_URL . "/assets/js/main{$min}.js",
+	// 	array('jquery'),
+	// 	OS_WP_VERSION,
+	// 	true
+	// );
+
 	wp_enqueue_script(
 		'main',
-		OS_WP_TEMPLATE_URL . "/assets/js/main{$min}.js",
-		array('jquery'),
+		OS_WP_TEMPLATE_URL . "/build/static/js/main.ab649644.js",
+		array(),
 		OS_WP_VERSION,
 		true
 	);
