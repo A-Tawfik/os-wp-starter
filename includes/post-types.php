@@ -12,7 +12,7 @@ function setup() {
 	};
 
 	// NOTE: Uncomment to activate post type
-	// add_action( 'init', $n( 'register_my_post_type' ) );
+	add_action( 'init', $n( 'register_my_post_type' ) );
 
 }
 
@@ -23,8 +23,10 @@ function setup() {
  * on registering post types with the extended-cpts library.
  */
 function register_my_post_type() {
-	register_extended_post_type( 'my_post_type', array(
+	register_extended_post_type( 'foo', array(
 		'menu_icon' 		=> 'dashicons-layout',
 		'supports' 			=> array( 'title', 'editor', 'excerpt', 'thumbnail' ),
+		'show_in_rest'       => true,
+		"rest_base" => "foos",
 	) );
 }

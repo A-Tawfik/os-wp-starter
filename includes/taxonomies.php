@@ -12,7 +12,7 @@ function setup() {
 	};
 
 	// NOTE: Uncomment to activate taxonomy
-	//add_action( 'init', $n( 'register_taxonomy' ) );
+	add_action( 'init', $n( 'register_taxonomy' ) );
 
 }
 
@@ -22,5 +22,13 @@ function setup() {
  * See https://github.com/johnbillion/extended-taxos for more info on using the extended-taxos library
  */
 function register_taxonomy() {
-	register_extended_taxonomy( 'my_taxo', 'post' );
+	register_extended_taxonomy( 'bar', 'foo',
+	 	array(
+		'show_in_rest'       => true,
+  	'rest_base'          => 'bar',)
+		);
+	register_extended_taxonomy( 'biz', 'foo',
+	 	array(
+		'show_in_rest'       => true,
+  	'rest_base'          => 'biz',) );
 }

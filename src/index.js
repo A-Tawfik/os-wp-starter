@@ -20,9 +20,13 @@ const router = (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Page}></IndexRoute>
-        <Route path="/view/:postId" component={Single}></Route>
+
+        <Route path="/:type" component={Page}></Route>
+        <Route path="/:type/:postId" component={Single}></Route>
+        
       </Route>
     </Router>
+
   </Provider>
 )
 
