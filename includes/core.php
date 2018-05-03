@@ -64,7 +64,7 @@ function scripts( $debug = false ) {
 
 	wp_enqueue_script(
 		'main',
-		OS_WP_TEMPLATE_URL . "/build/static/js/main.ab649644.js",
+		OS_WP_TEMPLATE_URL . "/build/static/js/main.js",
 		array(),
 		OS_WP_VERSION,
 		true

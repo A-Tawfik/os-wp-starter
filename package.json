@@ -3,7 +3,7 @@
   "title": "WP Starter",
   "description": "A starter theme for wordpress",
   "version": "1.0.0",
-  "homepage": "http://github.com/ObjectiveSubject/os-wp-starter",
+  "homepage": "/",
   "repository": {
     "type": "git",
     "url": "http://github.com/ObjectiveSubject/os-wp-starter"

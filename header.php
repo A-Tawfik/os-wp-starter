@@ -7,14 +7,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-	<meta name="theme-color" content="#000000">
-	<link rel="manifest" href="build/manifest.json">
-	<link rel="shortcut icon" href="build/favicon.ico">
-	<title>React App</title>
-	<link href="/static/css/main.84ec40b6.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

@@ -3,7 +3,7 @@ import { syncHistoryWithStore} from 'react-router-redux';
 import  { browserHistory} from 'react-router';
 
 // Import root reducer
-import rootReducer from './reducers/index';
+import rootReducer from './reducers';
 
 const defaultState = {
 
@@ -23,5 +23,6 @@ if (module.hot) {
     store.replaceReducer(nextRootReducer);
   })
 };
+
 
 export default store;
