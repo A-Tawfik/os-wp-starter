@@ -15,6 +15,7 @@ function setup() {
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'after_setup_theme', $n( 'features' ) );
 	// add_action( 'pre_get_posts', $n( 'modify_queries' ) );
+	add_action( 'send_headers', $n( 'cors' ) );
 	add_action( 'init', $n( 'add_menus' ) );
 
 	// Remove WordPress header cruft
@@ -24,6 +25,17 @@ function setup() {
 	remove_action( 'wp_head', 'index_rel_link' );
 	remove_action( 'wp_head', 'wp_generator' );
 }
+/**
+ * Add CORS access
+ */
+function cors() {
+	if ( ! did_action('rest_api_init') && $_SERVER['REQUEST_METHOD'] == 'HEAD' ) {
+		header( 'Access-Control-Allow-Origin: *' );
+		header( 'Access-Control-Expose-Headers: Link' );
+		header( 'Access-Control-Allow-Methods: HEAD' );
+	}
+}
+
 
 /**
  * Add feature support to theme
@@ -62,13 +74,21 @@ function scripts( $debug = false ) {
 	// 	true
 	// );
 
-	wp_enqueue_script(
-		'main',
-		OS_WP_TEMPLATE_URL . "/build/static/js/main.js",
-		array(),
-		OS_WP_VERSION,
-		true
-	);
+
+	    wp_enqueue_script( 'app', get_template_directory_uri() . '/build/static/js/main.js', array(), false, true );
+	    wp_localize_script( 'app', 'WP_API_Settings', array(
+	        'root' => esc_url_raw( rest_url() ),
+	        'nonce' => wp_create_nonce( 'wp_rest' )
+	    ) );
+
+
+	// wp_enqueue_script(
+	// 	'main',
+	// 	OS_WP_TEMPLATE_URL . "/build/static/js/main.js",
+	// 	array(),
+	// 	OS_WP_VERSION,
+	// 	true
+	// );
 }
 
 /**
@@ -83,7 +103,7 @@ function styles( $debug = false ) {
 
 	wp_enqueue_style(
 		'style',
-		OS_WP_URL . "/assets/css/style{$min}.css",
+		get_template_directory_uri() . '/build/static/css/main.css',
 		array(),
 		OS_WP_VERSION
 	);

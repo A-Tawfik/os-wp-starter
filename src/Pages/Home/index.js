@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import API from '../../helpers/api';
 import './Home.scss';
 
 
 class Home extends Component {
 
   render() {
+
+    API.then((site) => {
+      console.log(site.users().me())
+    })
 
     return (
 
