@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import './Header.scss';
 
 
@@ -9,7 +10,12 @@ class Header extends Component {
     return (
 
       <div className="Header">
-        <h2> Header</h2>
+        {wp.menu.main.map((navItem, index) => {
+          console.log(wp.url)
+          return (
+            <li key={navItem.ID}><Link to={navItem.url.replace(wp.url, "")}>{navItem.title}</Link></li>
+          )
+        } )}
       </div>
 
     );

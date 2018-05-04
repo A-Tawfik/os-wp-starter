@@ -6,7 +6,12 @@ namespace OS_WP\Core;
  *
  * @return void
  */
+
+	$dev_port = 3000;
+
+
 function setup() {
+
 	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
@@ -36,8 +41,6 @@ function cors() {
 	}
 }
 
-
-
 /**
  * Add feature support to theme
  */
@@ -65,31 +68,42 @@ function features() {
  * @return void
  */
 function scripts( $debug = false ) {
-	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	// $min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	// wp_enqueue_script(
-	// 	'main',
-	// 	OS_WP_TEMPLATE_URL . "/assets/js/main{$min}.js",
-	// 	array('jquery'),
-	// 	OS_WP_VERSION,
-	// 	true
-	// );
+	if ( $debug || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ) {
+		wp_enqueue_script(
+			'app',
+			'http://localhost:3000/static/js/bundle.js',
+			array(),
+			OS_WP_VERSION,
+			true );
+	} else {
+
+		wp_enqueue_script(
+			'app',
+			OS_WP_TEMPLATE_URL . "/build/static/js/main.js",
+			array(),
+			OS_WP_VERSION,
+			true
+		);
+	}
+
+	wp_localize_script( 'app', 'WP_API_Settings', array(
+		'root' => esc_url_raw( rest_url() ),
+		'nonce' => wp_create_nonce( 'wp_rest' )
+	) );
 
 
-	    wp_enqueue_script( 'app', 'http://localhost:3000/static/js/bundle.js', array(), false, true );
-	    wp_localize_script( 'app', 'WP_API_Settings', array(
-	        'root' => esc_url_raw( rest_url() ),
-	        'nonce' => wp_create_nonce( 'wp_rest' )
-	    ) );
+	wp_localize_script( 'app', 'wp', array(
+			"menu" => array(
+				"main" => wp_get_nav_menu_items('main')
+			),
+			"frontpageID" => get_option( 'page_on_front' ) ? get_option( 'page_on_front' ) : false,
+			"url" => get_site_url(), 
+
+	));
 
 
-	// wp_enqueue_script(
-	// 	'main',
-	// 	OS_WP_TEMPLATE_URL . "/build/static/js/main.js",
-	// 	array(),
-	// 	OS_WP_VERSION,
-	// 	true
-	// );
 }
 
 /**
@@ -100,7 +114,16 @@ function scripts( $debug = false ) {
  * @return void
  */
 function styles( $debug = false ) {
-	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+	// $min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
+if ( $debug || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ) {
+	wp_enqueue_style(
+		'style',
+		'http://localhost:3000/static/static/css/main.css',
+		array(),
+		OS_WP_VERSION
+	);
+} else {
 
 	wp_enqueue_style(
 		'style',
@@ -108,6 +131,8 @@ function styles( $debug = false ) {
 		array(),
 		OS_WP_VERSION
 	);
+}
+
 }
 
 /**
