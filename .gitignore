@@ -3,4 +3,5 @@
 node_modules
 release
 .idea
+/src/helpers/securepassword.js
 package-lock.json

@@ -37,6 +37,7 @@ function cors() {
 }
 
 
+
 /**
  * Add feature support to theme
  */
@@ -75,7 +76,7 @@ function scripts( $debug = false ) {
 	// );
 
 
-	    wp_enqueue_script( 'app', get_template_directory_uri() . '/build/static/js/main.js', array(), false, true );
+	    wp_enqueue_script( 'app', 'http://localhost:3000/static/js/bundle.js', array(), false, true );
 	    wp_localize_script( 'app', 'WP_API_Settings', array(
 	        'root' => esc_url_raw( rest_url() ),
 	        'nonce' => wp_create_nonce( 'wp_rest' )

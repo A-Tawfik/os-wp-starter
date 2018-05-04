@@ -12,8 +12,8 @@
 </head>
 <body <?php body_class(); ?>>
 
-	<!-- <div id="page" class="os-l-container">
-
+	<div id="root" class="os-l-container">
+<!-- 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-branding">
 

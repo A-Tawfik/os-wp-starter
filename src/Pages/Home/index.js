@@ -7,9 +7,6 @@ class Home extends Component {
 
   render() {
 
-    API.then((site) => {
-      console.log(site.users().me())
-    })
 
     return (
 

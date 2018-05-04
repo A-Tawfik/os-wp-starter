@@ -30,6 +30,7 @@ include( OS_WP_INC . 'libraries/extended-taxos.php' );
 include( OS_WP_INC . 'libraries/cmb2/init.php' );
 include( OS_WP_INC . 'libraries/cmb2-attached-posts/cmb2-attached-posts-field.php' );
 include( OS_WP_INC . 'libraries/cmb2-post-search-field/cmb2_post_search_field.php' );
+include( OS_WP_INC . 'libraries/wp-rest-api-frontpage-v2.php' );
 
 // Run the setup functions
 OS_WP\Core\setup();

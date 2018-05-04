@@ -10,9 +10,16 @@ import {apiURL, admin } from './securepassword';
 //   console.log("success",data)
 // })
 
+// endpoint: window.WP_API_Settings.endpoint,
+//     nonce: window.WP_API_Settings.nonce
 
+// const loginObj = window.WP_API_Settings ? {
+//     endpoint: window.WP_API_Settings.root,
+//     nonce: window.WP_API_Settings.nonce
+//   } : admin
 
-var apiPromise = WPAPI.discover( apiURL ).then(function( site ) {
+const apiPromise = WPAPI.discover( apiURL ).then(function( site ) {
+    console.log("this", site.frontpage())
     return site.auth(admin);
 });
 
