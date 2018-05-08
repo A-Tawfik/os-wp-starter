@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
 
 
-const rootReducer = combineReducers({routing: routerReducer});
+
+export const posts = ( state={} , action ) => {
+  if (action.type === "GET_POSTS") {
+    return posts
+  }
+}
+
+const rootReducer = combineReducers({posts});
 
 export default rootReducer;

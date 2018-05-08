@@ -6,8 +6,7 @@ import './Home.scss';
 class Home extends Component {
 
   render() {
-
-
+    console.log( this.props.getPosts() )
     return (
 
       <div className="Home">

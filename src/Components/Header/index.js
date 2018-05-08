@@ -6,16 +6,17 @@ import './Header.scss';
 class Header extends Component {
 
   render() {
+    let wp = window.wp;
+    let mainMenu = wp ? wp.menu.main.map((navItem, index) =>
+    <li key={navItem.ID}><Link to={navItem.url.replace(wp.url, "")}>{navItem.title}</Link></li>
+    )
+    :
+    []
 
     return (
 
       <div className="Header">
-        {wp.menu.main.map((navItem, index) => {
-          console.log(wp.url)
-          return (
-            <li key={navItem.ID}><Link to={navItem.url.replace(wp.url, "")}>{navItem.title}</Link></li>
-          )
-        } )}
+        {mainMenu}
       </div>
 
     );

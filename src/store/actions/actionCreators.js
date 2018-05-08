@@ -1,28 +1,20 @@
- // increment
-export function increment(index){
-  return {
-    type: 'INCREMENT_LIKES',
-    index
-  }
+import API from "../../helpers/api";
+
+
+
+
+function posts(res){
+  console.log(res)
 }
 
- // add comments
- export function addComments(postId, author, comment){
-   console.log("dispatching comment")
-   return {
-     type: 'ADD_COMMENT',
-     postId,
-     author,
-     comment
-   }
- }
+ // get posts
+export const getPosts = (args = {}) => {
+  let postArr = []
+  let postProm = API.then(site=> site.posts() )
+  postProm.then(res => {postArr = posts(res)} )
 
-
- // remove comments
- export function removeComment(postId, i){
-   return {
-     type: 'REMOVE_COMMENT',
-     i,
-     postId
-   }
- }
+  return(
+    {type: "GET_POSTS",
+    payload: postArr}
+  )
+};

@@ -12,6 +12,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<!-- <?php global $wp_rewrite; ?> -->
-<!-- <pre> <?php print_r($wp_rewrite->rules); ?> </pre> -->
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
 	<div id="root" class="os-l-container">
