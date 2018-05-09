@@ -99,7 +99,7 @@ function scripts( $debug = false ) {
 				"main" => wp_get_nav_menu_items('main')
 			),
 			"frontpageID" => get_option( 'page_on_front' ) ? get_option( 'page_on_front' ) : false,
-			"url" => get_site_url(), 
+			"url" => get_site_url(),
 
 	));
 
@@ -119,7 +119,7 @@ function styles( $debug = false ) {
 if ( $debug || ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ) {
 	wp_enqueue_style(
 		'style',
-		'http://localhost:3000/static/static/css/main.css',
+		'http://localhost:3000/static/css/main.css',
 		array(),
 		OS_WP_VERSION
 	);

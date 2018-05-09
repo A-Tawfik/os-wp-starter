@@ -1,20 +1,37 @@
 import API from "../../helpers/api";
 
-
-
-
-function posts(res){
-  console.log(res)
-}
-
  // get posts
-export const getPosts = (args = {}) => {
-  let postArr = []
-  let postProm = API.then(site=> site.posts() )
-  postProm.then(res => {postArr = posts(res)} )
+export const getPosts = (args={}) =>  (dispatch, getState) =>  {
 
-  return(
-    {type: "GET_POSTS",
-    payload: postArr}
-  )
-};
+    if(!getState().posts.fetching){
+        dispatch({
+            type: "FETCH_POSTS"
+        })
+
+        API.then(site=> site.foods().then( function(posts){
+
+                dispatch({
+                    type: "UPDATE_POST_LIST",
+                    payload: posts
+                })
+
+            }).then( () => {
+                dispatch({
+                    type: "CANCEL_FETCHING"
+                })
+            })
+        ).catch(function(err){
+
+            console.log("err", err)
+            dispatch({
+                type: "ADD_ERROR",
+                payload: [err]
+            })
+            dispatch({
+                type: "CANCEL_FETCHING"
+            })
+
+        });
+
+    }
+}

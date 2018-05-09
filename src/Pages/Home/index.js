@@ -5,12 +5,15 @@ import './Home.scss';
 
 class Home extends Component {
 
+    componentWillMount(){
+        this.props.getPosts();
+    }
+
   render() {
-    console.log( this.props.getPosts() )
     return (
 
       <div className="Home">
-        <h2>Home</h2>
+          <h2>Home</h2>
       </div>
 
     );
